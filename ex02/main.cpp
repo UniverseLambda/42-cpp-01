@@ -10,8 +10,7 @@ int main() {
 	std::cout << "brain address:     " << &brain << std::endl;
 	std::cout << "brain ptr address: " << stringPTR << std::endl;
 	std::cout << "brain ref address: " << &stringREF << std::endl;
-	std::cout << "brain:             " << brain << std::endl;
-	std::cout << "brain ptr address: " << *stringPTR << std::endl;
-	std::cout << "brain ref address: " << stringREF << std::endl;
+	std::cout << "brain ptr string: " << *stringPTR << std::endl;
+	std::cout << "brain ref string: " << stringREF << std::endl;
 	return 0;
 }
