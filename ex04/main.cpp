@@ -6,8 +6,15 @@
 bool theRealMainShady(std::string path, std::string target, std::string replacement) {
 	try {
 		std::ifstream in(path.data());
-		std::ofstream out((path + ".replace").data(), std::ofstream::out);
+		std::ofstream out;
 		ShaddyBuffer buff(target.size(), in, out);
+
+		if (!in.is_open()) {
+			std::cerr << "IO error" << std::endl;
+			return false;
+		}
+
+		out.open((path + ".replace").data(), std::ofstream::out);
 
 		while (buff.hasNext()) {
 			if (buff.matches(target)) {
